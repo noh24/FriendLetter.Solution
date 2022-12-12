@@ -21,6 +21,9 @@ namespace FriendLetter
       // this enables Developer Exception pages all the time, whether developing or in production.
       // we dont want this method because it eats up resources and slows down our app
       app.UseDeveloperExceptionPage(); // ******should be omitted*****
+      // configures a middleware to our request pipeline
+      // redirects http to https
+      app.UseHttpsRedirection();
       // specifies that we want our host to match the website URL to routes that we create within our apps
       // example: URL is localhost5000/Home/Index. host will know to match Home/Index to a route we coded in our project
       app.UseRouting();
