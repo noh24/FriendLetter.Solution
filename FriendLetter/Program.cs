@@ -17,6 +17,10 @@ namespace FriendLetter
       builder.Services.AddControllersWithViews();
       // builder.Build() creates and returns our web app host
       WebApplication app = builder.Build();
+      // just ONE way to use Developer Exception Pages
+      // this enables Developer Exception pages all the time, whether developing or in production.
+      // we dont want this method because it eats up resources and slows down our app
+      app.UseDeveloperExceptionPage(); // ******should be omitted*****
       // specifies that we want our host to match the website URL to routes that we create within our apps
       // example: URL is localhost5000/Home/Index. host will know to match Home/Index to a route we coded in our project
       app.UseRouting();
